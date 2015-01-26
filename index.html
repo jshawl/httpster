@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+  
+  </head>
+  <body>
+    <script type='text/javascript' src='httpster.js'></script>
+    <script>
+     var h = new HTTPster();
+     h.get('https://api.github.com/users/jshawl', function( response ){
+       console.log( response );
+     });
+    </script>
+  </body>
+</html>
