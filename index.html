@@ -12,6 +12,10 @@
 	console.log( 'getting', response );
       });
 
+      var req = h.get('http://reqr.es/api/users?page=1').then( function( response ){
+	console.log( 'promise resolved', response );
+      });
+
       var data = {
 	email: "peter@klaven",
 	password: "cityslicka"

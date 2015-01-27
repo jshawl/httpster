@@ -10,9 +10,17 @@ A JavaScript Library for AJAX’n
   var h = new HTTPster();
   h.get('url', function( response ){
     console.log( response ); 
-  })
+  });
+
+  // **or** with promises!
+  var request = h.get('url');
+  request.then( function( response ){
+    console.log( response ); 
+  });
 </script>
 ```
+
+
 
 ## .ajax( options )
 
