@@ -1,0 +1,23 @@
+{
+  "name": "httpster",
+  "version": "0.0.1",
+  "description": "",
+  "main": "httpster.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jshawl/httpster"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jshawl/httpster/issues"
+  },
+  "homepage": "https://github.com/jshawl/httpster",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jshint": "^1.9.0"
+  }
+}

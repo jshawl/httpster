@@ -24,7 +24,7 @@
 	    params.error( JSON.parse( response ) );
 	  }
 	}
-      }
+      };
       request = null;
     },
     get: function( url, success, error ){

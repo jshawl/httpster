@@ -5,45 +5,49 @@
   </head>
   <body>
     <script type='text/javascript' src='httpster.js'></script>
+    <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
     <script>
 
-     var h = new HTTPster();
-     h.get('http://reqr.es/api/users?page=1', function( response ){
+      /*
+      var h = new HTTPster();
+
+      h.get('http://reqr.es/api/users?page=1', function( response ){
        console.log( 'getting', response );
-     });
+      });
 
-     h.ajax({
-       url: 'http://reqr.es/api/users?page=1',
-       type: 'GET',
-       success: function( response ){
-         console.log( "ajaxing", response ); 
-       },
-       error: function( error ){
-        console.log(error); 
-       }
-     });
-
-     var data = {
+      var data = {
        email: "peter@klaven",
        password: "cityslicka"
-     }
+      }
 
-     h.post("http://reqr.es/api/login", data, function( response ){
+      h.post("http://reqr.es/api/login", data, function( response ){
        console.log( "posting", response );
-     });
+      });
 
-     var data = {
-       name: "morpheus",
-       job: "zion resident"
-     }
+      var data = {
+     name: "morpheus",
+     job: "zion resident"
+    }
 
-     h.put("http://reqr.es/api/users/2", data, function( response ){
-       console.log("putting", response); 
-     });
+    h.put("http://reqr.es/api/users/2", data, function( response ){
+     console.log("putting", response); 
+    });
 
-     h.destroy("http://reqr.es/api/users/2", function( response ){
-       console.log("deleting", response);
-     });
+    h.destroy("http://reqr.es/api/users/2", function( response ){
+     console.log("deleting", response);
+    });
+
+    h.ajax({
+     url: 'http://reqr.es/api/users?page=1',
+       type: 'GET',
+       success: function( response ){
+	 console.log( "ajaxing", response ); 
+       },
+       error: function( error ){
+    console.log(error); 
+       }
+      });
+      */
 
     </script>
   </body>
