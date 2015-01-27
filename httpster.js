@@ -53,7 +53,16 @@
         error: error
       }); 
     },
-    destroy: function( url, success, error ){
+    patch: function( url, data, success, error ){ 
+      this.ajax({
+        url: url,
+        type: 'PATCH',
+        data: JSON.stringify(data),
+        success: success,
+        error: error
+      }); 
+    },
+    delete: function( url, success, error ){
       this.ajax({
         url: url,
         type: 'DELETE',
