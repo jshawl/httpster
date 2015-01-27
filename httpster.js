@@ -9,7 +9,7 @@
       var request = new XMLHttpRequest();
       params.data = params.data || {};
       request.open( params.type, params.url, true );
-      if ( params.type == "POST" || params.type == "PUT" ){
+      if ( params.type == "POST" || params.type == "PUT" || params.type == "PATCH" ){
 	request.setRequestHeader( 'Content-Type', 'application/json; charset=UTF-8' );
 	request.send( params.data );
       } else {
