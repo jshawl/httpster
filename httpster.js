@@ -5,21 +5,61 @@
   };
 
   HTTPster.prototype = {
-    get: function( url, success, error ){
+    ajax: function( params ){
       var request = new XMLHttpRequest();
-      request.open('GET', url, true);
+      params.data = params.data || {};
+      request.open( params.type, params.url, true );
+      if ( params.type == "POST" || params.type == "PUT" ){
+	request.setRequestHeader( 'Content-Type', 'application/json; charset=UTF-8' );
+	request.send( params.data );
+      } else {
+	request.send();
+      }
       request.onreadystatechange = function() {
-	if (this.readyState === 4) {
+	if ( this.readyState === 4 ){
+	  var response = this.responseText ? this.responseText : "{}";
 	  if (this.status >= 200 && this.status < 400) {
-            success( JSON.parse(this.responseText) );
+	    params.success( JSON.parse( response ) );
 	  } else {
-            error( JSON.parse(this.responseText) );
+	    params.error( JSON.parse( response ) );
 	  }
 	}
-      };
-      request.send();
+      }
       request = null;
+    },
+    get: function( url, success, error ){
+      this.ajax({
+        url: url,
+        type: 'GET',
+        success: success,
+        error: error
+      });
+    },
+    post: function( url, data, success, error ){ 
+      this.ajax({
+        url: url,
+        type: 'POST',
+        data: JSON.stringify(data),
+        success: success,
+        error: error
+      }); 
+    },
+    put: function( url, data, success, error ){ 
+      this.ajax({
+        url: url,
+        type: 'PUT',
+        data: JSON.stringify(data),
+        success: success,
+        error: error
+      }); 
+    },
+    destroy: function( url, success, error ){
+      this.ajax({
+        url: url,
+        type: 'DELETE',
+        success: success,
+        error: error
+      }); 
     }
   };
-
 })();
