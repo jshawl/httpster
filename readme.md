@@ -5,7 +5,7 @@ A JavaScript Library for AJAX’n
 ## Usage
 
 ```html
-<script src='js/httpster.js' type='text/javascript'></script>
+<script src='./httpster.js' type='text/javascript'></script>
 <script type='text/javascript'>
   var h = new HTTPster();
   h.get('url', function( response ){
