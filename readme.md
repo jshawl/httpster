@@ -34,13 +34,6 @@ h.get('url', function( response ){
 })
 ```
 
-## .delete( url, success, error )
-
-```js
-h.delete('url', function( response ){
-  console.log( response );
-})
-```
 ## .post( url, data, success, error )
 
 ```js
@@ -61,6 +54,14 @@ h.patch('url', { name: "Jesse" }, function( response ){
 
 ```js
 h.put('url', { name: "Jesse" }, function( response ){
+  console.log( response );
+})
+```
+
+## .delete( url, success, error )
+
+```js
+h.delete('url', function( response ){
   console.log( response );
 })
 ```
