@@ -1,6 +1,6 @@
-;(function(){
+var httpster = (function(){
 
-  this.HTTPster = function(){
+  var HTTPster = function(){
     
   };
 
@@ -77,4 +77,5 @@
       }); 
     }
   };
+  return new HTTPster()
 })();

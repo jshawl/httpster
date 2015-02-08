@@ -7,13 +7,12 @@ A JavaScript Library for AJAX’n
 ```html
 <script src='./httpster.js' type='text/javascript'></script>
 <script type='text/javascript'>
-  var h = new HTTPster();
-  h.get('url', function( response ){
+  httpster.get(url, function( response ){
     console.log( response ); 
   });
 
   // **or** with promises!
-  var request = h.get('url');
+  var request = httpster.get('url');
   request.then( function( response ){
     console.log( response ); 
   });
@@ -25,7 +24,7 @@ A JavaScript Library for AJAX’n
 ## .ajax( options )
 
 ```js
-h.ajax({
+httpster.ajax({
   url: url,
   type: "GET" || "POST" || "PUT" || "PATCH" || "DELETE",
   data: data,
@@ -37,7 +36,7 @@ h.ajax({
 ## .get( url, success, error )
 
 ```js
-h.get('url', function( response ){
+httpster.get(url, function( response ){
   console.log( response );
 })
 ```
@@ -45,7 +44,7 @@ h.get('url', function( response ){
 ## .post( url, data, success, error )
 
 ```js
-h.post('url', { name: "Jesse" }, function( response ){
+httpster.post(url, { name: "Jesse" }, function( response ){
   console.log( response );
 })
 ```
@@ -53,7 +52,7 @@ h.post('url', { name: "Jesse" }, function( response ){
 ## .patch( url, data, success, error )
 
 ```js
-h.patch('url', { name: "Jesse" }, function( response ){
+httpster.patch(url, { name: "Jesse" }, function( response ){
   console.log( response );
 })
 ```
@@ -61,7 +60,7 @@ h.patch('url', { name: "Jesse" }, function( response ){
 ## .put( url, data, success, error )
 
 ```js
-h.put('url', { name: "Jesse" }, function( response ){
+httpster.put(url, { name: "Jesse" }, function( response ){
   console.log( response );
 })
 ```
@@ -69,7 +68,7 @@ h.put('url', { name: "Jesse" }, function( response ){
 ## .delete( url, success, error )
 
 ```js
-h.delete('url', function( response ){
+httpster.delete(url, function( response ){
   console.log( response );
 })
 ```

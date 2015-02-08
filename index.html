@@ -6,13 +6,11 @@
   <body>
     <script type='text/javascript' src='httpster.js'></script>
     <script>
-      var h = new HTTPster();
-
-      h.get('http://reqr.es/api/users?page=1', function( response ){
+      httpster.get('http://reqr.es/api/users?page=1', function( response ){
 	console.log( 'getting', response );
       });
 
-      var req = h.get('http://reqr.es/api/users?page=1').then( function( response ){
+      var req = httpster.get('http://reqr.es/api/users?page=1').then( function( response ){
 	console.log( 'promise resolved', response );
       });
 
@@ -21,7 +19,7 @@
 	password: "cityslicka"
       }
 
-      h.post("http://reqr.es/api/login", data, function( response ){
+      httpster.post("http://reqr.es/api/login", data, function( response ){
 	console.log( "posting", response );
       });
 
@@ -30,15 +28,15 @@
 	job: "zion resident"
       }
 
-      h.put("http://reqr.es/api/users/2", data, function( response ){
+      httpster.put("http://reqr.es/api/users/2", data, function( response ){
 	console.log("putting", response); 
       });
 
-      h.delete("http://reqr.es/api/users/2", function( response ){
+      httpster.delete("http://reqr.es/api/users/2", function( response ){
 	console.log("deleting", response);
       });
 
-      h.ajax({
+      httpster.ajax({
 	url: 'http://reqr.es/api/users?page=1',
 	type: 'GET',
 	success: function( response ){
